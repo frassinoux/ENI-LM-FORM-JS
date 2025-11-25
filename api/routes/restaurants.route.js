@@ -13,6 +13,8 @@ return res.status(200).json({
 
   }  catch(error){
         console.error(error)
+
+        // On renvoit l'erreur 
         return res.status(500).json({
             error: error
         })
