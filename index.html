@@ -5,12 +5,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="global.css" />
-  <title>Document</title>
+  <title>Deliveroo</title>
 </head>
 
 <body>
-  <h1 class="text-4xl font-bold text-center animate-bounce py-8">APPLICATION WEB
+  <header class="flex w-full min-h-16 bg-blue-500">
+      <nav class="flex w-full">
+        <ul class="flex w-full justify-center items-center gap-x-10 font-bold text-5xl">
+          <li class="flex">
+            <a class="flex z-10 hover:opacity-30 transition-opacity duration-300" href='/'>Accueil</a>
+          </li>
+          <li class="flex">
+            <a class="flex z-10 hover:opacity-30 transition-opacity duration-300" href='/restaurants.html'>Restaurants</a>
+          </li>
+        </ul>
+      </nav>
+  </header>
+  <h1 id="titre-principal" class="text-4xl font-bold text-center animate-bounce py-8">
+    APPLICATION WEB
   </h1>
+  <!--Restera toujours en bas du body-->
+  <script type="module" src="./src/index.js"> </script>
 </body>
 
 </html>

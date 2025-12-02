@@ -1,20 +1,22 @@
-console.log('Début de mon programme')
+console.log('Coucou Index.js !!!!')
 
-const Animal = require('./classes/Animal')
-const Chat = require('./classes/Chat')
+const titreH1 = document.querySelector('h1')
+titreH1.textContent = 'Youhou j\'ai changé le titre'
 
-const animal = new Animal('Toto')
-animal.parler()
+const listeUl = document.createElement('ul')
+listeUl.classList.add('flex', 'flex-row', 'flex-wrap', 'gap-8', 'justify-center', 'items-center')
+document.body.appendChild(listeUl)
+// Bonne partique, créer un fragment intermédiaire
+const fragment = document.createDocumentFragment()
 
-const minou = new Chat('Ricotta', 'Siamoise')
-minou.parler()
+for (let i = 0; i < 10000; i++) {
+  const itemDeListe = document.createElement('li')
+  itemDeListe.textContent = `Item n°${i}`
+  // Mauvaise pratique !!! Agir directement sur le DOM à chaque tour (100 000 fois)
+  // listeUl.appendChild(itemDeListe)
+  // Bonne pratique, ajouter l'élément au fragment à chaque tour de boucle
 
-try {
-  minou.nom = ''
-} catch (error) {
-  console.error('ERREUR : ' + error.message)
+  fragment.appendChild(itemDeListe)
 }
 
-// Pas de paramètre = Paramètre par défaut
-const inconnu = new Animal()
-inconnu.parler()
+listeUl.appendChild(fragment)
